@@ -5,7 +5,8 @@ import PropTypes from "prop-types";
 import {Row, Col, Form, Button, Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
- const CrearempresaComponent = props => {
+ const CrearempresaComponent = ({onClick,bool}, props) => {
+	 console.log(props);
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
@@ -124,9 +125,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 				</Button>
 				<Modal show={show} onHide={handleClose}>
 					<Modal.Header closeButton />
-					<Modal.Body>Contrato creado exitosamente</Modal.Body>
+					<Modal.Body>Contrato creado exitosamente </Modal.Body>
 					<Modal.Footer>
-						<Button variant="success" onClick={handleClose}>
+						<Button variant="success" onClick={handleClose, onClick}
+								>
 							Ok
 						</Button>
 					</Modal.Footer>
@@ -143,7 +145,6 @@ CrearempresaComponent.propTypes = {
 	direccion: PropTypes.string,
 	nit: PropTypes.string,
 	telefono: PropTypes.string
-	
 };
 
 export default CrearempresaComponent;

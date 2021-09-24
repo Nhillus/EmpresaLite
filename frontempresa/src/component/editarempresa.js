@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { Modal, Row, Col, Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-    const EditarEmpresaComponent = props => {
+    const EditarEmpresaComponent = ({onClick,id},props) => {
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
 	const [shownegative, setShownegative] = useState(false);
@@ -76,16 +76,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 						<Form.Control
 							className="text-left"
 							type="text"
-							placeholder="Empresa-123456789"
-							value={datos.id}
+							placeholder=""
+							value={id}
 							onChange={handleInputChange}
 							name="id"
+							disabled={true}
 						/>
 					</Col>
 				</Row>
 				<Row>
 					<Col lg={2} md={1} sm={2}>
-						<Form.Label>Region</Form.Label>
+						<Form.Label>Nombre</Form.Label>
 					</Col>
 					<Col lg={10} md={11} sm={10}>
 						<Form.Control
@@ -153,16 +154,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 					<Modal.Header closeButton />
 					<Modal.Body>Contrato actualizado exitosamente</Modal.Body>
 					<Modal.Footer>
-						<Button variant="success" onClick={handleClose}>
-							OK
-						</Button>
-					</Modal.Footer>
-				</Modal>
-				<Modal show={shownegative} onHide={handleCloses}>
-					<Modal.Header closeButton />
-					<Modal.Body>No se puede finalizar un contrato si no tiene técnicos asignados</Modal.Body>
-					<Modal.Footer>
-						<Button variant="danger" onClick={handleCloses}>
+						<Button variant="success" onClick={handleClose,onClick}>
 							OK
 						</Button>
 					</Modal.Footer>

@@ -4,15 +4,12 @@ import './index.css';
 import App from './empresa/App';
 import Crearempresa from './component/crearempresa'
 import reportWebVitals from './reportWebVitals';
-import Editarempresa from './component/editarempresa'
 
 
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <Crearempresa />
-    <Editarempresa/>
   </React.StrictMode>,
   document.getElementById('app')
 );
