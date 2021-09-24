@@ -77,10 +77,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 							className="text-left"
 							type="text"
 							placeholder=""
-							value={id}
+							value={datos.id}
 							onChange={handleInputChange}
 							name="id"
-							disabled={true}
 						/>
 					</Col>
 				</Row>
@@ -154,7 +153,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 					<Modal.Header closeButton />
 					<Modal.Body>Contrato actualizado exitosamente</Modal.Body>
 					<Modal.Footer>
-						<Button variant="success" onClick={handleClose,onClick}>
+						<Button variant="success" onClick={handleClose}>
 							OK
 						</Button>
 					</Modal.Footer>
